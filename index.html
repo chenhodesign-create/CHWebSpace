@@ -61,7 +61,7 @@
 
     /* ===== 版權列 ===== */
     .copyright {
-      background: var(--brand);
+      background: #005E58;   /* 版權列底色（比品牌主色深一階） */
       color: var(--white);
       font-family: "Inter", sans-serif;
       font-size: 10px;
@@ -97,21 +97,32 @@
       font-size: 12px;
       line-height: 20px;
       white-space: nowrap;
-      transition: background-color .15s ease;
+      transition: background-color .2s ease, color .2s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
     /* 白色 1px 分隔線 */
     .bar a + a { border-left: 1px solid var(--white); }
 
-    .bar a:active,
-    .bar a:hover { background: #00655e; }
-
-    .bar img {
+    /* ICON：以圖示 PNG 當遮罩，顏色跟著文字色（currentColor）走，反白時自動變綠 */
+    .bar .icon {
       width: 30px;
       height: 30px;
-      object-fit: contain;
+      background-color: currentColor;
+      -webkit-mask: var(--icon) center / contain no-repeat;
+              mask: var(--icon) center / contain no-repeat;
     }
+    .icon-phone { --icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAPoAAAD6AG1e1JrAAABRklEQVRIS+3WPUoDQRjG8WdCCgsxXsAvBEVFSWoLwRN4AMFWKw9hr0ew0WNIQMRUooWVIEm0iohB0ip/GdyA6OzHZGfEwl83MDsPOzvvvCv9VcC4fhOwBlzxqQvsKTZgCejz07ZiAWaBZ9zegYZiAO7I9ghMKyRgkWJOVFLl23hFxTRCB0+omJYCBxfRkXSgkIDlnG9r63lGoQHVlPodaiqQyteBMeZN0ln6dNWBMcUAbJBtS7EA5xnBD8CkYgDWydYCjGIAjnLCL10nHJgCjoE2cOpdBUANuM4Jt4vvDN8+aTAdx5xV+bDNwLGQy4sttYxSHAC78gEsAE+EsS8fdquAHuX1NeKvkO3FZVXlKzk894zuVmUAh/hre5eWCzAP3FBM1+6WQgI2kwvjNSW06QoNeu0BdUlzkmqSBpIujDG9vOf+KaYPtmXnWn6/nMcAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAABJRU5ErkJggg=="); }
+    .icon-fb    { --icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAByUlEQVRIS+2WP0gcQRTGvydeIIhBCSr+SbSRQAims0ijxFJIqYWWEeystBPEBFKkCKkCWoSQIgiWipDGFCkEbVKniWClxVkoETb6k8W9sMS3t+PdXhV/sLA7733z7ZudnRnpf8MUCNAiaUzSiKRHku5L+iMpkrQj6bukr2YWt9UP0AEsAWXyOQA+AA9UD8BsoOG/7APTqgXgFfWzpJsALFMcYebAS8LZBmaA58Ao8AJ47+TN5pkOAMeEMZfRx4iTWwY6vfyK6CNhrFTpwzOOeZ0l6ALOCGPI0T9NTOcyNGXgnmc8SSCO9h1hTFQ0TSl9vCqF4K1MwwrjmWc8qNq5ozCGPONeNZ4ez7ikbL5JuptcrRlDWIm/UQZRFP39TM2p9kNJA75EMrOzKrF4h4qSifYkK69UKh15Ff9QMXRXif30Kt6TNOPn6yEwldxfmNmXdBAYl9SWPD5WNtvXWoA24HfejwhEjnY3TwRcAH3XhtrMjiVtqnF8MrODapvESYMq7k9r0pMrrvqXpGUVz7yZ7eclxRWsFVjxqu/iABiwXoDxZ9UCsFij8SmwoHrgasKtBRqfAxuxRkXB1QvEx90tJ/Y2OQC0+2rdoktk/EIafwNcVQAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAAAAElFTkSuQmCC"); }
+    .icon-map   { --icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAPoAAAD6AG1e1JrAAABp0lEQVRIS+3WvUpcQRjG8WdEIY1hm5ggbKJd2M4LcAPaiNjYGLAxpEwabyBGsLAQFusQvQNvQBB7RUVDWBBkT5uEsEiCGmLyl8MeZZmdOZ+rjf66mX2feXeH2XNGum+MMgBKkiYkVSSVo3wgaV/StjHml7oJeAasAE38zoA1IPxCxQFVICC9BjCmIoAZ4B/5TCsPYAg4jVn4HPgT8/lvYFhZAV88zZaBSltdBfiE27ayACYdi/wERmIyU57D98qX6QCsOxZ4nyI378itJuVuAHUr3FAKwCPgm5U9cdX2uCYlvbTGB0rBGHMhadOaLmdpbPuh9C6tcZ+ryNf4vzXuV3pPrfFfT10nx5OqGT2nk3Jl4LuVPXTV+n7xljUOmy4o2VtJT6y5PU9tJ+ANbh9iMh89mdeueudrMdrW8C/k2t4jSTVJdUnhKR6VNCOp6jmUg8YY+8D5AYsUt6SsgFL0mMwryP1uBt6R35yKADbI7rOKorXlX0nvGHisbqB1KQhSXnteqJtIbt79pteA58Cuo+kOMKDbBtTamobX3l7dFWAWGE+qe6DIFfhQ8Fjl+gY+AAAADnRFWHRTb2Z0d2FyZQBGaWdtYZ6xlmMAAAAASUVORK5CYII="); }
+    .icon-book  { --icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAPoAAAD6AG1e1JrAAACIElEQVRIS+2VO2hUQRSGvxMEZaOSJqISNGJhIYgKPhpFRax8VNpJLCxEQUkhCBaC4KOw0EqLgK0vsNBKBMXCMghCTGdEMMQHESEmISafzHJXbm42brLZrfSDgTvnzPCfOXPuGfjXCOaImtZuBzYBq4E2YAr4AQwC/RHxikah7lZ71GFrM6TeVTupF7VTfWb9pADWMh/U4+p3F84X9VgtvTLqORtPdy3RfTaHX+qOqlWtLgPeAvO7l7kzCKyLiPE0ack5jjZRNLEKOEURtbeQnhNZZU6zjY2N3VYfqwfVT5n9vnpY/azuVffkxmRu/+uKXvnEaiuwpRDLC2CgaBsdHe0H3kTEU+BsZu8DeoFvEZH2jQKLsyaTZ6daSh+LMsNW6iAiHqk3q7j2A5sz8ZZCTaXm0lcRlnmidgBHgAvAgbwvIq7k1k3kDkglC5VoUvrq4Xoqmoh4kjdmNfA+jYJo4t0f4Yj4Cgwxk1vpF0hjZGTkZRX/UuC5uqRg7wJ2ZWMyZ++LiGEK0fQAF3Pz1G3KixKtra0pgO5SqbQhu7tUkIn1wD0gnW6leonZX8CHBV85PSsa1J9n44O6ZoZwE/t0hZNVRXPiV208l5kL6Z5sHHdq6U1D7VIHXBjXqAe1XT1dRwAT6hkagZr67Hn1gfrxL6KpcWyjGajL1Z9VRNPL1U4zUcdzgukqDtFs1I5McEq9oRafv+agtmW/3MZaa/9Dxm8nwJtvTkwl3QAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAAAAElFTkSuQmCC"); }
+
+    /* 反白：滑鼠移入（桌機）／點擊（手機）時，白底＋品牌綠 ICON 與文字 */
+    @media (hover: hover) {
+      .bar a:hover { background: var(--white); color: var(--brand); }
+    }
+    .bar a:active,
+    .bar a:focus-visible { background: var(--white); color: var(--brand); outline: none; }
   </style>
 </head>
 <body>
@@ -131,36 +142,39 @@
       </video>
     </section>
 
-    <!-- 02 建築外觀 -->
+    <!-- 02 GAUDI CONSTRUCTION Co. LTD -->
     <section class="section">
-      <img src="images/02.png" width="1200" height="2500" alt="高第禾禾 建築外觀" loading="lazy">
+      <img src="images/02.png" width="1200" height="168" alt="GAUDI CONSTRUCTION Co. LTD" loading="lazy">
     </section>
 
-    <!-- 03 CITY LIFE 都會生活 機能便利 -->
+    <!-- 03 建築外觀 -->
     <section class="section">
-      <img src="images/03.png" width="1200" height="1560" alt="CITY LIFE 都會生活 機能便利" loading="lazy">
+      <img src="images/03.png" width="1200" height="2500" alt="高第禾禾 建築外觀｜LIGHT・NATURE・MODERN" loading="lazy">
     </section>
 
-    <!-- 04 MATERIALS 質感品味 智慧生活 -->
+    <!-- 04 CITY LIFE 都會生活 機能便利 -->
     <section class="section">
-      <img src="images/04.png" width="1200" height="1750" alt="MATERIALS 質感品味 智慧生活" loading="lazy">
+      <img src="images/04.png" width="1200" height="1640" alt="CITY LIFE 都會生活 機能便利" loading="lazy">
     </section>
 
-    <!-- 05 合作品牌 -->
+    <!-- 05 MATERIALS 質感品味 智慧生活 -->
     <section class="section">
-      <img src="images/05.png" width="1200" height="200" alt="SAKURA・WAVERLOCK・TOTO 合作品牌" loading="lazy">
+      <img src="images/05.png" width="1200" height="1840" alt="MATERIALS 質感品味 智慧生活" loading="lazy">
     </section>
 
-    <!-- 06 CONSTRUCTION 建築工法 345 -->
+    <!-- 06 合作品牌 -->
     <section class="section">
-      <img src="images/06.png" width="1200" height="1560" alt="CONSTRUCTION 建築工法 345" loading="lazy">
+      <img src="images/06.png" width="1200" height="200" alt="SAKURA・WAFERLOCK・TOTO 合作品牌" loading="lazy">
     </section>
 
-    <!-- 07 地圖與賞屋專線 -->
+    <!-- 07 CONSTRUCTION 建築工法 345 -->
     <section class="section">
-      <a href="tel:0966434529" aria-label="撥打賞屋專線 0966-434-529">
-        <img src="images/07.png" width="1200" height="758" alt="接待中心 地圖｜賞屋專線 0966-434-529" loading="lazy">
-      </a>
+      <img src="images/07.png" width="1200" height="1640" alt="CONSTRUCTION 建築工法 345" loading="lazy">
+    </section>
+
+    <!-- 08 地圖、建案地址與接洽專線（純圖片，無連結） -->
+    <section class="section">
+      <img src="images/08.png" width="1200" height="800" alt="高第禾禾 區位地圖｜建案地址：仁德區長興路87巷｜接洽專線：0966-434-529" loading="lazy">
     </section>
 
     <footer class="copyright">© 2026 GAUDI Construction. All Rights Reserved.</footer>
@@ -169,16 +183,16 @@
   <!-- 底部固定按鈕列（連結請依實際資料替換） -->
   <nav class="bar" aria-label="快速聯絡">
     <a href="tel:0966434529">
-      <img src="images/icon-phone.png" alt="">電話預約
+      <span class="icon icon-phone" aria-hidden="true"></span>電話預約
     </a>
-    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><!-- TODO：換成粉絲專頁網址 -->
-      <img src="images/icon-fb.png" alt="">FaceBook
+    <a href="https://www.facebook.com/p/%E9%AB%98%E7%AC%AC%E5%BB%BA%E8%A8%AD-100064162389701/?locale=zh_TW" target="_blank" rel="noopener">
+      <span class="icon icon-fb" aria-hidden="true"></span>FaceBook
     </a>
     <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8D%97%E5%B8%82%E4%BB%81%E5%BE%B7%E5%8D%80%E9%95%B7%E8%88%88%E8%B7%AF87%E5%B7%B7" target="_blank" rel="noopener"><!-- TODO：確認地址 -->
-      <img src="images/icon-map.png" alt="">地圖導覽
+      <span class="icon icon-map" aria-hidden="true"></span>地圖導覽
     </a>
-    <a href="#"><!-- TODO：換成預約表單網址（例如 Google 表單 / LINE） -->
-      <img src="images/icon-book.png" alt="">預約賞屋
+    <a href="#"><!-- TODO：換成預約表單或 LINE 官方帳號網址 -->
+      <span class="icon icon-book" aria-hidden="true"></span>預約賞屋
     </a>
   </nav>
 </body>
