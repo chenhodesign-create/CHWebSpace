@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>高第禾禾｜3房・三面採光・雙衛開窗｜高第建設</title>
+  <meta name="description" content="高第建設「高第禾禾」全新完工。3房、三面採光、雙衛開窗，都會生活機能便利，質感品牌智慧生活。賞屋專線 0966-434-529。">
+  <meta name="theme-color" content="#007971">
+
+  <!-- 社群分享預覽 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="高第禾禾｜全新完工">
+  <meta property="og:description" content="3房・三面採光・雙衛開窗｜賞屋專線 0966-434-529">
+  <meta property="og:image" content="images/01.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #007971;   /* 品牌主色 */
+      --white: #ffffff;
+      --bar-h: 66px;      /* 底部按鈕列高度 */
+      --max-w: 1200px;    /* 響應式最大寬度，超過則置中顯示 */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: #e9eeed;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: #222;
+    }
+
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      background: var(--white);
+      /* 預留底部固定按鈕列的空間 */
+      padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
+      min-height: 100vh;
+    }
+
+    /* ===== 圖片區塊 ===== */
+    .section img,
+    .section video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 主視覺影片：先以 1200:1700 比例佔位，避免載入時版面跳動 */
+    .hero video {
+      aspect-ratio: 1200 / 1700;
+      object-fit: cover;
+      background: var(--brand);
+    }
+
+    /* ===== 版權列 ===== */
+    .copyright {
+      background: var(--brand);
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      line-height: 10px;
+      text-align: center;
+      padding: 16px 8px;
+    }
+
+    /* ===== 底部固定按鈕列 ===== */
+    .bar {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: var(--max-w);
+      display: flex;
+      background: var(--brand);
+      padding-bottom: env(safe-area-inset-bottom);
+      z-index: 100;
+    }
+
+    .bar a {
+      flex: 1 1 0;
+      min-width: 0;
+      height: var(--bar-h);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 20px;
+      white-space: nowrap;
+      transition: background-color .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 白色 1px 分隔線 */
+    .bar a + a { border-left: 1px solid var(--white); }
+
+    .bar a:active,
+    .bar a:hover { background: #00655e; }
+
+    .bar img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- 01 主視覺：高第禾禾 全新完工 -->
+    <!--
+      影片放在 images/01.mp4（建議 1200×1700、H.264、無聲、5MB 內）。
+      autoplay + muted + playsinline 才能在 iPhone / Android 自動播放；
+      影片尚未載入或無法播放時，會顯示 poster（01.png）。
+    -->
+    <section class="section hero">
+      <video autoplay muted loop playsinline preload="auto"
+             poster="images/01.png" width="1200" height="1700"
+             aria-label="高第建設 高第禾禾 全新完工｜3房・三面採光・雙衛開窗">
+        <source src="images/01.mp4" type="video/mp4">
+        <img src="images/01.png" width="1200" height="1700" alt="高第建設 高第禾禾 全新完工｜3房・三面採光・雙衛開窗">
+      </video>
+    </section>
+
+    <!-- 02 建築外觀 -->
+    <section class="section">
+      <img src="images/02.png" width="1200" height="2500" alt="高第禾禾 建築外觀" loading="lazy">
+    </section>
+
+    <!-- 03 CITY LIFE 都會生活 機能便利 -->
+    <section class="section">
+      <img src="images/03.png" width="1200" height="1560" alt="CITY LIFE 都會生活 機能便利" loading="lazy">
+    </section>
+
+    <!-- 04 MATERIALS 質感品味 智慧生活 -->
+    <section class="section">
+      <img src="images/04.png" width="1200" height="1750" alt="MATERIALS 質感品味 智慧生活" loading="lazy">
+    </section>
+
+    <!-- 05 合作品牌 -->
+    <section class="section">
+      <img src="images/05.png" width="1200" height="200" alt="SAKURA・WAVERLOCK・TOTO 合作品牌" loading="lazy">
+    </section>
+
+    <!-- 06 CONSTRUCTION 建築工法 345 -->
+    <section class="section">
+      <img src="images/06.png" width="1200" height="1560" alt="CONSTRUCTION 建築工法 345" loading="lazy">
+    </section>
+
+    <!-- 07 地圖與賞屋專線 -->
+    <section class="section">
+      <a href="tel:0966434529" aria-label="撥打賞屋專線 0966-434-529">
+        <img src="images/07.png" width="1200" height="758" alt="接待中心 地圖｜賞屋專線 0966-434-529" loading="lazy">
+      </a>
+    </section>
+
+    <footer class="copyright">© 2026 GAUDI Construction. All Rights Reserved.</footer>
+  </main>
+
+  <!-- 底部固定按鈕列（連結請依實際資料替換） -->
+  <nav class="bar" aria-label="快速聯絡">
+    <a href="tel:0966434529">
+      <img src="images/icon-phone.png" alt="">電話預約
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><!-- TODO：換成粉絲專頁網址 -->
+      <img src="images/icon-fb.png" alt="">FaceBook
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8D%97%E5%B8%82%E4%BB%81%E5%BE%B7%E5%8D%80%E9%95%B7%E8%88%88%E8%B7%AF87%E5%B7%B7" target="_blank" rel="noopener"><!-- TODO：確認地址 -->
+      <img src="images/icon-map.png" alt="">地圖導覽
+    </a>
+    <a href="#"><!-- TODO：換成預約表單網址（例如 Google 表單 / LINE） -->
+      <img src="images/icon-book.png" alt="">預約賞屋
+    </a>
+  </nav>
+</body>
+</html>
